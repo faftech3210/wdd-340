@@ -10,7 +10,6 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
-const dbUrl = process.env.DATABASE_URL
 
 /* ***********************
  * View Engine and Templates
@@ -33,8 +32,9 @@ app.get("/", function(req, res){
  * Local Server Information
  * Values from .env (environment) file
  *************************/
-const port = process.env.PORT
-const host = process.env.HOST
+const port = process.env.PORT || 5500
+const host = process.env.HOST || "localhost"
+const dbUrl = process.env.DATABASE_URL
 
 /* ***********************
  * Log statement to confirm server operation
