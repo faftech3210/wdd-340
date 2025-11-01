@@ -32,7 +32,7 @@ app.get("/", function(req, res){
  * Local Server Information
  * Values from .env (environment) file
  *************************/
-const port = process.env.PORT || 10000
+const port = process.env.PORT
 const host = process.env.HOST || "localhost"
 const dbUrl = process.env.DATABASE_URL
 
@@ -40,5 +40,5 @@ const dbUrl = process.env.DATABASE_URL
  * Log statement to confirm server operation
  *************************/
 app.listen(port, () => {
-  console.log(`app listening on ${host}:${port}`)
+  console.log(`app listening on ${host}`)
 })
