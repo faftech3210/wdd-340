@@ -203,6 +203,75 @@ h1{
   font-size: 16px;
 }
 
+/* Container for the inventory grid */
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  list-style: none;
+  margin: 0;
+}
+
+/* Each vehicle item */
+#inv-display li {
+  background-color: #fff;
+  border: 1px solid #0553fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+}
+
+/* Vehicle image */
+#inv-display img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Name and price section */
+.namePrice {
+  padding: 1rem;
+  text-align: center;
+}
+
+.namePrice h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.namePrice a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.namePrice a:hover {
+  text-decoration: none;
+}
+
+.namePrice span {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+/* Notice message */
+.notice {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 2rem;
+}
+
+
 footer {
   text-align: center;
   background-color: black;
