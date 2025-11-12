@@ -1,5 +1,8 @@
 const { Pool } = require("pg")
 require("dotenv").config()
+
+console.log("DATABASE_URL:", process.env.DATABASE_URL)
+
 /* ***************
  * Connection Pool
  * SSL Object needed for local testing of app
