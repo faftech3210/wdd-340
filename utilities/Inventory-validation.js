@@ -3,7 +3,7 @@
  * Modified in Unit 5
  *********************************** */
 const utilities = require(".")
-const { body, validationResult } = require("express-validator")
+const { body, validationResult } = require("expressValidator")
 const validate = {}
 
 /*  **********************************
