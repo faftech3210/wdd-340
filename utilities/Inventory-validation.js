@@ -53,7 +53,7 @@ validate.newInventoryRules = () => {
       .isInt({
         no_symbols: true,
       })
-      .withMessage("The vehicle's classification is required."),
+      .withMessage("The new vehicle's classification is required."),
 
     body("inv_make")
       .trim()
@@ -61,7 +61,7 @@ validate.newInventoryRules = () => {
       .isLength({
         min: 3,
       })
-      .withMessage("A vehicle make is required."),
+      .withMessage("The new vehicle make is required."),
 
     body("inv_model")
       .trim()
@@ -69,7 +69,7 @@ validate.newInventoryRules = () => {
       .isLength({
         min: 3,
       })
-      .withMessage("A vehicle model is required."),
+      .withMessage("The new vehicle model is required."),
 
     body("inv_description")
       .trim()
@@ -77,7 +77,7 @@ validate.newInventoryRules = () => {
       .isLength({
         min: 3,
       })
-      .withMessage("A vehicle description is required."),
+      .withMessage("The new vehicle description is required."),
 
       body("inv_image")
       .trim()
@@ -85,7 +85,7 @@ validate.newInventoryRules = () => {
         min: 6,
       })
       .matches(/\.(jpg|jpeg|png|webp)$/)
-      .withMessage("A vehicle image path is required and must be an image."),
+      .withMessage("The new vehicle image path is required and must be an image."),
 
     body("inv_thumbnail")
       .trim()
@@ -93,12 +93,12 @@ validate.newInventoryRules = () => {
         min: 6,
       })
       .matches(/\.(jpg|jpeg|png|webp)$/)
-      .withMessage("A vehicle thumbnail path is required and must be an image."),
+      .withMessage("The new vehicle thumbnail path is required and must be an image."),
 
     body("inv_price")
       .trim()
       .isDecimal()
-      .withMessage("A vehicle price is required."),
+      .withMessage("The new vehicle price is required."),
 
     body("inv_year")
       .trim()
@@ -106,14 +106,14 @@ validate.newInventoryRules = () => {
         min: 1900,
         max: 2099,
       })
-      .withMessage("A vehicle year is required."),
+      .withMessage("The new vehicle year is required."),
 
     body("inv_miles")
       .trim()
       .isInt({
         no_symbols: true,
       })
-      .withMessage("The vehicle's miles is required."),
+      .withMessage("The new vehicle's miles is required."),
 
     body("inv_color")
       .trim()
@@ -121,7 +121,7 @@ validate.newInventoryRules = () => {
       .isLength({
         min: 3,
       })
-      .withMessage("The vehicle's color is required."),
+      .withMessage("The new vehicle's color is required."),
   ]
 }
 
