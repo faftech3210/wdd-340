@@ -1,6 +1,6 @@
 const pool = require("../database/")
 
-/* ***************************
+/*=================================
  *  Get all classification data
  *  Unit 3, MVC: Get Started Activity
  * ************************** */
@@ -14,6 +14,16 @@ async function getClassifications() {
  *  Get all inventory and classification_name by classification_id
  *  Unit 3, Build the Inventory route, controller and model activity
  * ************************** */
+async function getClassifications(){
+  return await pool.query("SELECT * FROM public.classification ORDER BY classification_name")
+}
+
+
+
+
+/*===================================================================== 
+  Get all inventory items and classification_name by classification_id
+ ======================================================================= */
 async function getInventoryByClassificationId(classification_id) {
   try {
     const data = await pool.query(
@@ -25,6 +35,7 @@ async function getInventoryByClassificationId(classification_id) {
     console.error("getclassificationsbyid error " + error)
   }
 }
+
 
 /* ***************************
  *  Get inventory and classification data by inv_id

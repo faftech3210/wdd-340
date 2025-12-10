@@ -8,6 +8,14 @@ const invChecks = require("../utilities/inventory-validation")
 router.get("/type/:classificationId", invController.buildByClassificationId);
 
 
+router.get("/detail/:inv_id",
+utilities.handleErrors(invController.buildDetail))
+
+
+/* ==================
+ Error Route
+ week3, Task 3
+ ================== */
 /* ****************************************
  * Route to build vehicle detail view
  **************************************** */
@@ -105,7 +113,6 @@ router.post(
   invChecks.checkInventoryData,
   utilities.handleErrors(invController.addInventory)
 )
-
 
 
 module.exports = router;

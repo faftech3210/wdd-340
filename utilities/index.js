@@ -59,6 +59,41 @@ Util.buildClassificationGrid = async function (data) {
     return grid
 }
 
+/* **************************************
+* Build the vehicle detail HTML
+* ************************************ */
+
+Util.buildSingleVehicleDisplay = async (vehicle) => {
+  let svd = '<section id="vehicle-display">'
+  svd += "<div>"
+  svd += '<section class="imagePrice">'
+  svd +=
+    "<img src='" +
+    vehicle.inv_image +
+    "' alt='Image of " +
+    vehicle.inv_make +
+    " " +
+    vehicle.inv_model +
+    " on cse motors' id='mainImage'>"
+  svd += "</section>"
+  svd += '<section class="vehicleDetail">'
+  svd += "<h3> " + vehicle.inv_make + " " + vehicle.inv_model + " Details</h3>"
+  svd += '<ul id="vehicle-details">'
+  svd +=
+    "<li><h4>Price: $" +
+    new Intl.NumberFormat("en-US").format(vehicle.inv_price) +
+    "</h4></li>"
+  svd += "<li><h4>Description:</h4> " + vehicle.inv_description + "</li>"
+  svd += "<li><h4>Color:</h4> " + vehicle.inv_color + "</li>"
+  svd +=
+    "<li><h4>Miles:</h4> " +
+    new Intl.NumberFormat("en-US").format(vehicle.inv_miles) +
+    "</li>"
+  svd += "</ul>"
+  svd += "</section>"
+  svd += "</div>"
+  svd += "</section>"
+  return svd
 Util.buildClassificationList = async function (classification_id = null) {
     let data = await invModel.getClassifications()
     let classificationList =
@@ -76,7 +111,7 @@ Util.buildClassificationList = async function (classification_id = null) {
     })
     classificationList += "</select>"
     return classificationList
-}
+}}
 
 /* **************************************
 * Build the inventory view HTML
