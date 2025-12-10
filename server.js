@@ -14,7 +14,6 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index')
 const session = require('express-session');
-<<<<<<< HEAD
 const pool = require('./database/')
 
 
@@ -58,7 +57,6 @@ app.use(express.static("public"))
 
 // Unit 5 Authentication cookie use
 app.use(cookieParser())
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 
 /* ***********************
  * View Engine and Templates
@@ -103,12 +101,9 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", inventoryRoute)
 
-<<<<<<< HEAD
-=======
 //Account route
 app.use("/account", accountRoute);
 
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
@@ -147,10 +142,7 @@ const host = process.env.HOST
  *************************/
 
 app.listen(port, host, () => {
-<<<<<<< HEAD
   console.log(`app listening on ${host}:${port}`);
-=======
   console.log(`app listening on:${port}`);
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 });
 
