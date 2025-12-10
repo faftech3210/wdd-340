@@ -25,7 +25,6 @@ Util.getNav = async function (req, res, next) {
   return list
 }
 
-module.exports = Util
 
 /* **************************************
 * Build the classification view HTML
@@ -60,26 +59,49 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the vehicle detail HTML
+* ************************************ */
 
-/*=============================================
---- Function to return a simgle item
-=============================================
-async function getClassificationById(classification_id) {
-    const data = await pool.query(
-      "SELECT * FROM public.classification WHERE classification_id = $1 ORDER BY classification_name",
-       [classification_id]
-    )
-    return data.rows[0]
-  } 
-========================================================*/
+Util.buildSingleVehicleDisplay = async (vehicle) => {
+  let svd = '<section id="vehicle-display">'
+  svd += "<div>"
+  svd += '<section class="imagePrice">'
+  svd +=
+    "<img src='" +
+    vehicle.inv_image +
+    "' alt='Image of " +
+    vehicle.inv_make +
+    " " +
+    vehicle.inv_model +
+    " on cse motors' id='mainImage'>"
+  svd += "</section>"
+  svd += '<section class="vehicleDetail">'
+  svd += "<h3> " + vehicle.inv_make + " " + vehicle.inv_model + " Details</h3>"
+  svd += '<ul id="vehicle-details">'
+  svd +=
+    "<li><h4>Price: $" +
+    new Intl.NumberFormat("en-US").format(vehicle.inv_price) +
+    "</h4></li>"
+  svd += "<li><h4>Description:</h4> " + vehicle.inv_description + "</li>"
+  svd += "<li><h4>Color:</h4> " + vehicle.inv_color + "</li>"
+  svd +=
+    "<li><h4>Miles:</h4> " +
+    new Intl.NumberFormat("en-US").format(vehicle.inv_miles) +
+    "</li>"
+  svd += "</ul>"
+  svd += "</section>"
+  svd += "</div>"
+  svd += "</section>"
+  return svd
+}
 
-/*=============================================
---- Function to return a multiple items
-=============================================
-async function getClassifications() {
-    const data = await pool.query(
-      "SELECT * FROM public.classification ORDER BY classification_name"
-    )
-    return data.rows
-  } 
-========================================================*/
+/* ****************************************
+ * Middleware For Handling Errors
+ * Wrap other function in this for 
+ * General Error Handling
+ **************************************** */
+Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+
+module.exports = Util
