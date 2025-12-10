@@ -52,6 +52,7 @@ app.use(express.static("public"))
 
 // Unit 5 Authentication cookie use
 app.use(cookieParser())
+app.use(utilities.checkJWTToken) 
 
 /* ***********************
  * View Engine and Templates

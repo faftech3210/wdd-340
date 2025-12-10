@@ -323,6 +323,125 @@ footer a:hover {
   text-decoration: underline;
 }
 
+
+
+/* Inventory Management Container */
+.inventory-management {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings & Text */
+.inventory-management h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+.inventory-management p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Classification Dropdown */
+.inventory-management select {
+  width: 100%;
+  max-width: 350px;
+  padding: 0.65rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+.inventory-management select:hover,
+.inventory-management select:focus {
+  border-color: #0078d7;
+  outline: none;
+}
+
+/* Inventory Table */
+#inventoryDisplay {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+}
+
+#inventoryDisplay th,
+#inventoryDisplay td {
+  border: 1px solid #e5e5e5;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.delete-link {
+  color: #c01313; /* Red */
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.delete-link:hover {
+  color: #9c0f0f; /* Darker red on hover */
+}
+
+
+#inventoryDisplay th {
+  background-color: #0078d7;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+#inventoryDisplay tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+#inventoryDisplay tr:hover {
+  background-color: #e8f1ff;
+  transition: 0.2s;
+}
+
+/* NoScript Message */
+.inventory-management noscript {
+  color: #c62828;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: block;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 600px) {
+  .inventory-management {
+    padding: 1rem;
+  }
+
+  .inventory-management select {
+    width: 100%;
+  }
+
+  #inventoryDisplay th,
+  #inventoryDisplay td {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .inventory-management h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
 @media (min-width: 800px) {
   body {
     background: url('../images/vehicles/adventador.jpg') repeat;

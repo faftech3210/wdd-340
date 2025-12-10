@@ -35,6 +35,29 @@ router.get(
 )
 
 /* ****************************************
+ Inventory management route
+ **************************************** */
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+/***********************************
+ * Edit Inventory View Route
+ * This will display a form pre-filled
+ * with existing vehicle information
+ ***********************************/
+router.get(
+  "/edit/:inventory_id",
+  // utilities.checkLogin, // ensure authorized user
+  utilities.handleErrors(invController.buildEditInventoryView) // controller function
+)
+
+// Process the inventory update form and save changes to the database
+router.post(
+  "/update/", 
+  utilities.handleErrors(invController.updateInventory) 
+)
+
+
+/* ****************************************
  * Build add-classification View Route
  * Assignment 4, Task 2
  * checkAccountType added Unit 5, Assignment 5, Task 2

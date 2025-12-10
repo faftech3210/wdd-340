@@ -5,11 +5,18 @@ const utilities = require("../utilities");
 const regValidate = require('../utilities/account-validation')
 const accountController = require("../controllers/accountController");
 
+// Account Management Dashboard (default for /account)
+router.get(
+  "/",
+  utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement)
+)
+
+
 // Route for "My Account" page
 // This file handles routes AFTER "/account"
 router.get(
   "/login", 
-  utilities.handleErrors(accountController.buildLogin)
+   utilities.handleErrors(accountController.buildLogin)
 );
 
 router.get(
