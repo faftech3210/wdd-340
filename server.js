@@ -14,10 +14,51 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index')
 const session = require('express-session');
+<<<<<<< HEAD
 const pool = require('./database/')
 
 
 /* ***********************
+=======
+const accountRoute = require("./routes/accountRoute")
+const bodyParser = require("body-parser")
+const pool = require('./database/')
+const cookieParser = require("cookie-parser")
+
+
+/* ***********************
+ * Middleware Between the 
+  request and response
+ * ************************/
+ app.use(session({
+  store: new (require('connect-pg-simple')(session))({
+    createTableIfMissing: true,
+    pool,
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  name: 'sessionId',
+}))
+
+// Express Messages Middleware
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+/* ***********************
+ * Static Files  <-- ADD HERE
+ *************************/
+app.use(express.static("public"))
+
+// Unit 5 Authentication cookie use
+app.use(cookieParser())
+>>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 
 /* ***********************
  * View Engine and Templates
@@ -25,6 +66,8 @@ const pool = require('./database/')
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
+
+
 
 /* ***********************
  * Middleware
@@ -60,6 +103,12 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 // Inventory routes
 app.use("/inv", inventoryRoute)
 
+<<<<<<< HEAD
+=======
+//Account route
+app.use("/account", accountRoute);
+
+>>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
@@ -98,6 +147,10 @@ const host = process.env.HOST
  *************************/
 
 app.listen(port, host, () => {
+<<<<<<< HEAD
   console.log(`app listening on ${host}:${port}`);
+=======
+  console.log(`app listening on:${port}`);
+>>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 });
 
