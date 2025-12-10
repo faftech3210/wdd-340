@@ -7,14 +7,11 @@ async function getClassifications(){
   return await pool.query("SELECT * FROM public.classification ORDER BY classification_name")
 }
 
-<<<<<<< HEAD
-/* =======================================================================
-=======
 
 
-/* ***************************
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
- *  Get all inventory items and classification_name by classification_id
+
+/*===================================================================== 
+  Get all inventory items and classification_name by classification_id
  ======================================================================= */
 async function getInventoryByClassificationId(classification_id) {
   try {
@@ -31,15 +28,12 @@ async function getInventoryByClassificationId(classification_id) {
   }
 }
 
-<<<<<<< HEAD
 /* ================================================
    Get inventory and classification data by inv_id
 =================================================*/
-=======
 /* ***************************
  *  Get inventory and classification data by inv_id
  *   * ************************** */
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 async function getInventoryById(invId) {
   try {
     const data = await pool.query(
@@ -52,10 +46,8 @@ async function getInventoryById(invId) {
   }
 }
 
-<<<<<<< HEAD
 
 module.exports = {getClassifications, getInventoryByClassificationId,getInventoryById}; 
-=======
 /* ***************************
  *  Insert new classification
  *  Assignment 4, Task 2
@@ -110,4 +102,3 @@ async function addInventory(
 
 
 module.exports = { getClassifications, getInventoryByClassificationId, getInventoryById, addClassification, addInventory }
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647

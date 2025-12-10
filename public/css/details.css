@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .vehicle-detail {
   display: flex;
   gap: 2rem;
@@ -34,7 +34,7 @@
   padding: 10px;
   margin-bottom: 1rem;
 }
-=======
+
 /* Base styles */
 #vehicle-display {
   padding: 1rem;
@@ -122,4 +122,3 @@
     padding-left: 1rem;
   }
 }
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647

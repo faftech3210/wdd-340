@@ -1,0 +1,129 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: blue;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+h2 {
+    color: #1f2937;
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size:1.2rem ;
+    color: #e0f2fe;
+}
+
+h3 {
+    color: blue;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.notice {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: blue;
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Warning messages */
+.message.warning {
+    background-color: #fef3c7;
+    border: 1px solid #fde68a;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    list-style: disc;
+}
+
+.message.warning li {
+    margin-left: 20px;
+}
+
+/* Inventory Management Section */
+.inventory-management {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e0f2fe;
+    border-radius: 5px;
+}
+
+/* Links within sections */
+.inventory-management a {
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .inventory-management {
+        padding: 10px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p, a {
+        font-size: 14px;
+    }
+
+    .inventory-management {
+        padding: 8px;
+    }
+}

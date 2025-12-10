@@ -24,10 +24,6 @@ Util.getNav = async function (req, res, next) {
     return list
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 /* **************************************
 * Build the classification view HTML
 * ************************************ */
@@ -61,7 +57,6 @@ Util.buildClassificationGrid = async function (data) {
     return grid
 }
 
-<<<<<<< HEAD
 /* **************************************
 * Build the vehicle detail HTML
 * ************************************ */
@@ -97,7 +92,6 @@ Util.buildSingleVehicleDisplay = async (vehicle) => {
   svd += "</div>"
   svd += "</section>"
   return svd
-=======
 Util.buildClassificationList = async function (classification_id = null) {
     let data = await invModel.getClassifications()
     let classificationList =
@@ -115,7 +109,7 @@ Util.buildClassificationList = async function (classification_id = null) {
     })
     classificationList += "</select>"
     return classificationList
-}
+}}
 
 /* **************************************
 * Build the inventory view HTML
@@ -143,7 +137,6 @@ Util.buildSingleVehicleDisplay = async function (data) {
     grid += "</section>"
     grid += `</div>`
     return grid
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 }
 
 /* ****************************************
@@ -153,9 +146,4 @@ Util.buildSingleVehicleDisplay = async function (data) {
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
-<<<<<<< HEAD
-
 module.exports = Util
-=======
-module.exports = Util
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647

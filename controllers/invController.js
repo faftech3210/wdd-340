@@ -28,11 +28,6 @@ invCont.buildByClassificationId = async function (req, res, next) {
     grid,
   })
 }
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 /* ***************************
  *  Build vehicle detail view
  *  Assignment 3, Task 1
@@ -51,23 +46,14 @@ invCont.buildDetail = async function (req, res, next) {
     htmlData,
   })
 }
-<<<<<<< HEAD
- 
-=======
 
-
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
-/* ****************************************
+/*****************************************
  *  Process intentional error
  *  Assignment 3, Task 3
  * ************************************ */
 invCont.throwError = async function (req, res) {
   throw new Error("I made this error on purpose")
 }
-<<<<<<< HEAD
- 
- 
-=======
 
 /* ***************************
  *  Build vehicle management view
@@ -342,5 +328,4 @@ invCont.deleteItem = async function (req, res, next) {
 }
 
 
->>>>>>> 69c97e2d58c1402c4854698e5a190b0f1f77c647
 module.exports = invCont

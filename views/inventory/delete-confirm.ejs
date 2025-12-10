@@ -1,0 +1,44 @@
+<%# Unit 4, Assignment 4, Task 3 %>
+<% if (title) {%>
+<h1><%= title %></h1>
+<%} else {res.redirect('/')} %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+<ul class="message warning">
+  <% errors.array().forEach(error => { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %>
+
+<div id="registerContainer">
+  <p><strong>Confirm Deletion – This delete is permanent and cannot be undone.</strong></p>
+  <form action="/inv/delete" method="post">
+    <fieldset>
+
+      <label for="invMake">Make</label>
+      <input type="text" name="inv_make" id="invMake" required
+        <% if(locals.inv_make) { %> value="<%= locals.inv_make %>" <% } %> readonly>
+
+      <label for="invModel">Model</label>
+      <input type="text" name="inv_model" id="invModel" required
+        <% if(locals.inv_model) { %> value="<%= locals.inv_model %>" <% } %> readonly>
+
+      <label for="invYear">Year</label>
+      <input type="text" name="inv_year" id="invYear" required
+        <% if(locals.inv_year) { %> value="<%= locals.inv_year %>" <% } %> readonly>
+
+      <label for="invPrice">Price</label>
+      <input type="text" name="inv_price" id="invPrice" required
+        <% if(locals.inv_price) { %> value="<%= locals.inv_price %>" <% } %> readonly>
+
+      <button type="submit">Delete Vehicle</button>
+
+      <input type="hidden" name="inv_id"
+        <% if(locals.inv_id) { %> value="<%= locals.inv_id %>" <% } %>>
+        
+    </fieldset>
+  </form>
+</div>
