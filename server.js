@@ -15,7 +15,7 @@ const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index')
 const session = require('express-session');
 const pool = require('./database/')
-
+const bodyParser = require("body-parser");
 
 /* ***********************
 =======
